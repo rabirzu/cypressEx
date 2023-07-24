@@ -47,3 +47,52 @@ function square (number){
     return number * number;
 }
 console.log(square(2));
+
+
+//Equality Operators
+
+
+//Strict equality type and value
+console.log(1===1)
+console.log('1'===1)
+
+//lose equality (value)
+
+console.log(1==1)
+console.log('1'==1)
+
+//Ternary operator
+
+let points = 100;
+let type = points > 100? 'gold' : 'silver';
+
+//logical operators
+
+//Logical AND (&&)
+
+let highIncome = false;
+let goodCreditScore = false;
+let eligibleForLoad = highIncome && goodCreditScore;
+
+console.log('Eligible '+eligibleForLoad);
+
+//Logical TRUE (||)
+
+//NOT (!)
+
+let applicationRefused = !eligibleForLoad
+
+console.log('Aplication refused '+applicationRefused)
+
+
+//Exercise swap
+let a = 'red';
+let b = 'blue';
+
+let c = a;
+a = b;
+b = c;
+
+console.log(a);
+console.log(b);
+
