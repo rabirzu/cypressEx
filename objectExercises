@@ -1,0 +1,112 @@
+//street
+//city
+//zipCode
+//showAdress (address)
+
+
+const address1 ={
+    street: "Std. Plopii fara sot nr 7a",
+    city: "Iasi",
+    zipCode: "555000"
+}
+
+function showAdress (address){
+    for (let key in address)
+    console.log(key,address[key])
+}
+
+
+let address =  createAddres ('a','b','c');
+console.log(address)
+
+//factory function
+
+function createAddres(street, city, zipCode){
+    return{
+        street,
+        city,
+        zipCode
+    };
+}
+
+//constructor function
+
+let addressConstructor1 = new Address ('a','b','c')
+console.log(addressConstructor)
+
+function Address(street, city, zipCode){
+    this.street = street;
+    this.city = city;
+    this.zipCode = zipCode;
+}
+
+let addressConstructor2 = new Address("a", "b", "c");
+
+function areEqual (address1, address2){
+return address1.street===address2.street &&
+address1.city === address2.city &&
+address1.zipCode === address2.zipCode}
+
+function areSame (address1, address2){
+    return address1 === address2;
+}
+
+
+//blog
+
+let post = {
+    title : 'a',
+    body : 'b',
+    author : 'c',
+    views:10,
+    comments: [
+        {
+            author:'a',
+            body :'b',
+        },
+        {
+            author:'c',
+            body: 'd'
+        }
+    ],
+    isLive:true
+}
+
+//constructor function
+
+function PostConstructor (title, body, author){
+    this.title=title;
+    this.body=body;
+    this.author=author;
+    this.views=0;
+    this.comments=[];
+    this.isLive=false;
+}
+
+//price range
+
+let priceRanges = [
+  {
+    label: "$",
+    tooltip: "Inexpensive",
+    minPerPerson: 0,
+    maxPerPerson: 100,
+  },
+  {
+    label: "$$",
+    tooltip: "Moderate",
+    minPerPerson: 11,
+    maxPerPerson: 20,
+  },
+  {
+    label: "$$$",
+    tooltip: "Expensive",
+    minPerPerson: 21,
+    maxPerPerson: 50,
+  },
+];
+let restaurants = [
+    {
+        averagePerPerson : 5
+    }
+];
