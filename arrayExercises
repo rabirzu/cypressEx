@@ -1,0 +1,119 @@
+
+
+
+function arrayFromRange(min,max)
+{
+    const arr=[];
+
+    for(let i= min ;i<=max ;i++){
+        arr.push(i);
+        return arr;
+    }
+}
+
+//includes
+
+
+function include (array,searchElement){
+
+for(let el of array)
+{
+    if(el ===searchElement){
+        return true;
+    }
+}
+}
+
+//except
+
+const numbers = [1, 2, 3, 4];
+const output = except (numbers,[1,2]);
+
+console.log(output);
+
+function except (array, excluded){
+ let newArray = array
+
+ for(let el of array){
+    if(!excluded.includes(el)){
+       newArray.push(el);
+       return newArray
+    }
+ }
+}
+
+const numbersMove =[1,2,3,4];
+
+const outputMove=move(numbers,0,1);
+
+function move (array, index, offset){
+
+    const position= index + offset;
+    if(position>=array.length || position<0){
+        console.error('invalid offset');
+        return
+    }
+
+    const output= [...array];
+    const element =output.splice(index,1)[0];
+    output.splice(index+offset,0,element)
+    return output;
+    
+
+}
+
+//count occurences 
+
+const numbersOcurrence=[1,2,3,4];
+
+
+function countOcurrences (array, searchElement){
+    let count = 0
+    for( el in array){
+        if(el ===searchElement){
+            count++;
+         return count;
+        }
+    }
+}
+
+//max
+
+function getMax(array){
+    if(array.length === 0 )return undefined;
+
+   return  array.reduce((a,b)=> (a>b)?a:b);}
+
+
+//movies
+
+const movies =[
+    {
+        title:'a',
+        year:'2018',
+        rating: 4.5
+    },
+    {
+        title:'b',
+        year:'2018',
+        rating: 4.7
+    },
+    {
+        title:'c',
+        year:'2018',
+        rating: 3
+    },
+    {
+        title:'d',
+        year:'2017',
+        rating: 4.5
+    },
+];
+
+const titles= movies
+.filter (m=>m.year === 2018 && m.rating>=4)
+.sort((a,b)=>a.rating -b.rating)
+.reverse()
+.map(m=>m.title)
+
+console.log(titles)
