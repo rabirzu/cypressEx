@@ -1,3 +1,6 @@
+import HomePage from "./pageObjects/HomePage";
+import ProductPage from "./pageObjects/ProductPage";
+import CheckoutPage from "./pageObjects/CheckoutPage";
 /// <reference types= "Cypress" />
 
 describe("Section 8 Framework", function () {
@@ -6,21 +9,40 @@ describe("Section 8 Framework", function () {
       this.data = data;
     });
   });
+
   it("Section 8 framework", function () {
+    const homePage = new HomePage();
+    const productPage = new ProductPage();
+    const checkoutPage = new CheckoutPage();
+
     cy.visit("https://www.rahulshettyacademy.com/angularpractice/");
-    cy.get(":nth-child(1) > .form-control").type(this.data.name);
-    cy.get("select").select(this.data.gender);
+    homePage.getEditBox().type(this.data.name);
+    homePage.getGender().select(this.data.gender);
 
-    cy.get(":nth-child(4) > .ng-pristine").should('have.value',this.data.name);
-     cy.get(":nth-child(1) > .form-control").should('have.attr','minlength','2');
-     cy.get("#inlineRadio3").should('be.disabled');
+    homePage.getTwoWayDataBinding().should("have.value", this.data.name);
+    homePage.getEditBox().should("have.attr", "minLength", "2");
+    homePage.getEntrepeneaur().should("be.disabled");
+    homePage.getShopTab().click();
 
-     //shop test case
-
-     cy.get('a[href = "/angularpractice/shop"]').click();
-
-     //select a product
-     cy.selectProduct('Nokia')
+    //select product
+    this.data.productName.forEach(function (element) {
+      cy.selectProduct(element);
+    });
+    //product page
+    productPage.getCheckOutButton().click();
+    //tap on checkout button from product page
+    productPage.getCartCheckoutButton().click();
+    //tap inside of the checkbox and select india
+    checkoutPage.getTextBox().type("india");
+    cy.wait(6000);
    
+   checkoutPage.getDropDownOption("India").click();
+    
+    // cy.get('.suggestions>ul>li>a').contains('India')
+    // .invoke('index').then(index=>
+    //   {
+    //     cy.get('.suggestions>ul>li>a').select(index)
+    //   })
+    });
   });
-});
+
