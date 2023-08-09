@@ -15,7 +15,7 @@ describe("Section 8 Framework", function () {
     const productPage = new ProductPage();
     const checkoutPage = new CheckoutPage();
 
-    cy.visit(Cypress.env("url") + "/angularpractice/");
+    cy.visit(Cypress.env("url") + "angularpractice/");
     homePage.getEditBox().type(this.data.name);
     homePage.getGender().select(this.data.gender);
 
