@@ -15,7 +15,7 @@ describe("Section 8 Framework", function () {
     const productPage = new ProductPage();
     const checkoutPage = new CheckoutPage();
 
-    cy.visit("https://www.rahulshettyacademy.com/angularpractice/");
+    cy.visit(Cypress.env("url") + "/angularpractice/");
     homePage.getEditBox().type(this.data.name);
     homePage.getGender().select(this.data.gender);
 
@@ -28,21 +28,49 @@ describe("Section 8 Framework", function () {
     this.data.productName.forEach(function (element) {
       cy.selectProduct(element);
     });
-    //product page
+
+    //product page section 11
     productPage.getCheckOutButton().click();
+
+    var sum = 0;
+    cy.get("tr td:nth-child(4) strong")
+      .each(($el, index, $list) => {
+        const amount = $el.text();
+        var res = amount.split(" ");
+        res = res[1].trim();
+        sum = Number(sum) + Number(res);
+      })
+      .then(function () {
+        cy.log(sum);
+      });
+
+    cy.get("h3 strong").then(function (element) {
+      const amount = element.text();
+      var res = amount.split(" ");
+      var total = res[1].trim();
+
+      expect(Number(total)).to.equal(Number(sum));
+    });
+
     //tap on checkout button from product page
     productPage.getCartCheckoutButton().click();
     //tap inside of the checkbox and select india
     checkoutPage.getTextBox().type("india");
     cy.wait(6000);
-   
-   checkoutPage.getDropDownOption("India").click();
-    
+    checkoutPage.getDropDownOption("India").click();
+    checkoutPage.getCheckbox().click({ force: true });
+    checkoutPage.getClickPurchase().click();
+    checkoutPage.getAlert().then(function (element) {
+      const actualText = element.text();
+      expect(actualText.includes("Success")).to.be.true;
+    });
+
     // cy.get('.suggestions>ul>li>a').contains('India')
     // .invoke('index').then(index=>
     //   {
     //     cy.get('.suggestions>ul>li>a').select(index)
     //   })
-    });
-  });
 
+    //sum of products functionality
+  });
+});

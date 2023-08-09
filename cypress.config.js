@@ -10,5 +10,7 @@ export default defineConfig({
 
   env: {
     url: "https://rahulshettyacademy.com",
+    userId: "raluca",
+    password: "890",
   },
 });
