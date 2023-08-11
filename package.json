@@ -4,22 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cypress run",
-    "headTest":"npm run test -- --headed",
-    "chromeTest":"npm run test -- --browser chrome",
-    "recordDashBoardTest":"npm run test -- --record --key 47f9e915-ea44-4be2-82c4-6eeec515750c --reporter mochawesome --headed"
+    "test": "npx cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test -- --record --key 47f9e915-ea44-4be2-82c4-6eeec515750c --reporter mochawesome --headed"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
   },
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
     "cypress": "^12.17.2",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^10.1.0",
+    "multiple-cucumber-html-reporter": "^3.4.0"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor":"^15.0.0",
-    "@cypress/broswerify-preprocessor":"latest"
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
+    "@cypress/browserify-preprocessor": "latest"
   }
-
-  }
-
+}
