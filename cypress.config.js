@@ -14,16 +14,17 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   defaultCommandTimeout: 6000,
-  env: {
-    url: "https://rahulshettyacademy.com",
-  },
+
   retries: {
     runMode: 1,
   },
   projectId: "xq62ky",
 
   e2e: {
+    chromeWebSecurity: false,
     setupNodeEvents,
-    specPattern: "cypress/integration/examples/",
+    stepDefinitions: "cypress/integration/examples/*{js}",
+    specPattern: ["**/*.feature"],
+    baseUrl: "https://www.saucedemo.com/",
   },
 });

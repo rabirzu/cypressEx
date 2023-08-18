@@ -1,163 +1,155 @@
-//landscape or portrait exercise
+// //landscape or portrait exercise
 
-function isLandscape(width, height) {
-  if (width > height) {
-    return true;
-  }
-}
-
-//FizzBuzz
-
-const output = fizzBuzz("number");
-console.log(output);
-function fizzBuzz(input) {
-  if (typeof input !== "number") {
-    return NaN;
-  }
-
-  if (input % 3 == 0 && input % 5 !== 0) {
-    return "Fizz";
-  }
-  if (input % 5 == 0 && input % 3 !== 0) {
-    return "Buzz";
-  }
-  if (input % 5 && input % 3 == 0) {
-    return "FizzBuzz";
-  }
-  return input;
-}
-
-//Demerit Points
-
-//Speed Limit =70
-//5 -> 1 point
-// Math.floor (1.3)
-// >12 point -> suspended
-checkSpeed(50);
-function checkSpeed(speed) {
-  const speedLimit = 70;
-  const kmPerPoint = 5;
-
-  if (speed <= speedLimit) {
-    console.log("ok");
-  } else {
-    const points = Math.floor((speed - speedLimit) / kmPerPoint);
-    if (points >= 12) {
-      console.log("License suspended");
-    } else {
-      console.log("Points", points);
-    }
-  }
-}
-
-//even and odd numbers
-showNumbers(10);
-
-function showNumbers(limit) {
-  for (let i = 0; i <= limit; i++) {
-   const message = (i % 2 === 0) ? 'even' : 'odd'
-   console.log(i, message);
-}
-}
-
-//count Truthy
-
-function countTruthy (array){
-    let count = 0;
-
-    for(let value of array){
-        if(value){
-            count++;
-        }
-        return count
-    }
-
-}
-
-//String properties
-const movie = {
-    title: 'a',
-    releaseYear: 2018,
-    rating: 4.5,
-    director: 'b'
-}
-
-console.log(showProperties(movie))
-
-function showProperties (obj){
-    for( let v in obj){
-      if(typeof obj[v] === 'string'){
-        console.log(v, obj[v]);
-      }
-    }
-}
-
-//sum and multiply of 3 and 5
-
-function sum (limit){
-    const sum = 0;
-
-    for(let i=0;i<=limit,i++;){
-        if(i%3 === 0 || i % 5 === 0){
-            sum+=i;
-     return sum;
-        }
-
-
-    }
-}
-
-//grade
-
-// console.log(calculateGrade(1));
-
-// function calculateGrade(marks){
-  
-//     const average = calculateAverage(marks)
-
-//     if(average<60) return 'f';
-//     if (average <70) return'd';
-//     if(average<80) return 'c';
-//     if(average<90) return 'b';
-//     return 'a';
-
+// function isLandscape(width, height) {
+//   if (width > height) {
+//     return true;
+//   }
 // }
 
-// function calculateAverage(arr){
-//     let sum =0;
-//     for (let value of arr)
-//     sum +=value;
-//     return sum /arr.length
+// //FizzBuzz
+
+// const output = fizzBuzz("number");
+// console.log(output);
+// function fizzBuzz(input) {
+//   if (typeof input !== "number") {
+//     return NaN;
+//   }
+
+//   if (input % 3 == 0 && input % 5 !== 0) {
+//     return "Fizz";
+//   }
+//   if (input % 5 == 0 && input % 3 !== 0) {
+//     return "Buzz";
+//   }
+//   if (input % 5 && input % 3 == 0) {
+//     return "FizzBuzz";
+//   }
+//   return input;
 // }
 
-//stars
-showStars(3);
-function showStars (rows){
+// //Demerit Points
 
-   for(let row = 1 ; row <=rows; row++){
-    let pattern = '';
-    for(let i = 0;i < row; i++)
-    pattern += '*';
-    console.log(pattern)
-   }
-}
+// //Speed Limit =70
+// //5 -> 1 point
+// // Math.floor (1.3)
+// // >12 point -> suspended
+// checkSpeed(50);
+// function checkSpeed(speed) {
+//   const speedLimit = 70;
+//   const kmPerPoint = 5;
 
-//primes
+//   if (speed <= speedLimit) {
+//     console.log("ok");
+//   } else {
+//     const points = Math.floor((speed - speedLimit) / kmPerPoint);
+//     if (points >= 12) {
+//       console.log("License suspended");
+//     } else {
+//       console.log("Points", points);
+//     }
+//   }
+// }
 
-function showPrimes (limit) { 
-for(let number =2; number <=limit; number++){
-    if(isPrime)
-    console.log(number)
-}
-}
+// //even and odd numbers
+// showNumbers(10);
 
-function isPrime (number){
-    for (let factor = 2; factor < number; factor++){
-        if (number % factor ===0){
-            return false;
-        }
-        return true;
-    
-    }
+// function showNumbers(limit) {
+//   for (let i = 0; i <= limit; i++) {
+//     const message = i % 2 === 0 ? "even" : "odd";
+//     console.log(i, message);
+//   }
+// }
 
-}
+// //count Truthy
+
+// function countTruthy(array) {
+//   let count = 0;
+
+//   for (let value of array) {
+//     if (value) {
+//       count++;
+//     }
+//     return count;
+//   }
+// }
+
+// //String properties
+// const movie = {
+//   title: "a",
+//   releaseYear: 2018,
+//   rating: 4.5,
+//   director: "b",
+// };
+
+// console.log(showProperties(movie));
+
+// function showProperties(obj) {
+//   for (let v in obj) {
+//     if (typeof obj[v] === "string") {
+//       console.log(v, obj[v]);
+//     }
+//   }
+// }
+
+// //sum and multiply of 3 and 5
+
+// function sum(limit) {
+//   const sum = 0;
+
+//   for (let i = 0; i <= limit, i++; ) {
+//     if (i % 3 === 0 || i % 5 === 0) {
+//       sum += i;
+//       return sum;
+//     }
+//   }
+// }
+
+// //grade
+
+// // console.log(calculateGrade(1));
+
+// // function calculateGrade(marks){
+
+// //     const average = calculateAverage(marks)
+
+// //     if(average<60) return 'f';
+// //     if (average <70) return'd';
+// //     if(average<80) return 'c';
+// //     if(average<90) return 'b';
+// //     return 'a';
+
+// // }
+
+// // function calculateAverage(arr){
+// //     let sum =0;
+// //     for (let value of arr)
+// //     sum +=value;
+// //     return sum /arr.length
+// // }
+
+// //stars
+// showStars(3);
+// function showStars(rows) {
+//   for (let row = 1; row <= rows; row++) {
+//     let pattern = "";
+//     for (let i = 0; i < row; i++) pattern += "*";
+//     console.log(pattern);
+//   }
+// }
+
+// //primes
+
+// function showPrimes(limit) {
+//   for (let number = 2; number <= limit; number++) {
+//     if (isPrime) console.log(number);
+//   }
+// }
+
+// function isPrime(number) {
+//   for (let factor = 2; factor < number; factor++) {
+//     if (number % factor === 0) {
+//       return false;
+//     }
+//     return true;
+//   }
+// }

@@ -15,7 +15,7 @@ const productPage = new ProductPage();
 let name;
 
 Given("I open Ecommerce Page", () => {
-  cy.visit(Cypress.env("url") + "/angularpractice/");
+  cy.visit("https://rahulshettyacademy.com/angularpractice/");
 });
 
 /// When I add items to Cart
@@ -80,4 +80,8 @@ Then("Validate the forms behavior", function () {
 // And select the Shop Page
 Then("Select the Shop Page", () => {
   homePage.getShopTab().click();
+});
+
+Then("I check if the Products selected are in Cart", () => {
+
 });
