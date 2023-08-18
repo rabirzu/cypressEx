@@ -1,7 +1,236 @@
 [
   {
-    "description": "    application Regression",
+    "description": "",
     "elements": [
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-validation;login-flow",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Login flow",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "I access the page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 638000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "user-name",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "standard_user",
+                      "secret_sauce"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I enter login credentials",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 628000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I click on Login button",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I am redirected to Products page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "end-to-end-ecommerce-validation",
+    "line": 11,
+    "keyword": "Feature",
+    "name": "End to End Ecommerce Validation",
+    "tags": [],
+    "uri": "cypress/integration/examples/BDD/assessment1-2.feature"
+  },
+  {
+    "description": "    //application Regression",
+    "elements": [
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-validation;ecommerce-products-delivery",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Ecommerce products delivery",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open Ecommerce Page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1340000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I add items to Cart",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 0,
+              "error_message": "Cannot read properties of undefined (reading 'productName')"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Validation the total prices",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Select the country submit and verify Thank you",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-validation;ecommerce-products-delivery",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Ecommerce products delivery",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open Ecommerce Page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 215000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I add items to Cart",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 0,
+              "error_message": "Cannot read properties of undefined (reading 'productName')"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Validation the total prices",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Select the country submit and verify Thank you",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      },
       {
         "description": "",
         "id": "end-to-end-ecommerce-validation;filling-the-form-to-shop",
@@ -19,7 +248,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1455000000
+              "duration": 206000000
             }
           },
           {
@@ -49,7 +278,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 354000000
+              "duration": 330000000
             }
           },
           {
@@ -62,7 +291,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29000000
+              "duration": 16000000
             }
           },
           {
@@ -75,7 +304,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 983000000
+              "duration": 909000000
             }
           }
         ],

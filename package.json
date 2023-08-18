@@ -14,6 +14,7 @@
       "enabled": true,
       "output": "cypress/cucumberReports/results.json"
     }
+
   },
   "author": "",
   "license": "ISC",
