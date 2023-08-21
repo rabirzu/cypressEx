@@ -14,7 +14,6 @@
       "enabled": true,
       "output": "cypress/cucumberReports/results.json"
     }
-
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +27,7 @@
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
-    "@cypress/browserify-preprocessor": "latest"
+    "@cypress/browserify-preprocessor": "latest",
+    "convert-excel-to-json": "^1.7.0"
   }
 }
