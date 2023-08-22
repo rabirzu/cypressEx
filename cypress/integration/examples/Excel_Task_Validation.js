@@ -6,6 +6,7 @@ import neatCSV from "neat-csv";
 
 let productName;
 
+
 describe("JWT Session", () => {
   it("is logged in through local storage", async () => {
     cy.LoginAPI().then(function () {
@@ -44,19 +45,15 @@ describe("JWT Session", () => {
 
     cy.wait(2000);
 
-    cy.get(".order-summary button").click();
+    cy.get(".order-summary button").contains("Excel").click();
 
-    cy.readFile(
+    const filePath =
       Cypress.config("fileServerFolder") +
-        "/cypress/downloads/order-invoice_rahul.csv"
-    ).then(async (text) => {
-      const csv = await neatCSV(text);
+      "/cypress/downloads/order-invoice_ralucacazacu96.xls";
 
-      console.log(csv);
-
-      const actualProductCSV = csv[0]["Product Name"];
-
-      expect(productName).to.equal(actualProductCSV);
-    });
+    cy.task('excelToJsonConverter',filePath).then(function(result){
+      cy.log(resul.data[1].A);
+      expect(productName).to.equal(result.data[1].B)
+    })
   });
 });
