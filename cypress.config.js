@@ -31,12 +31,4 @@ module.exports = defineConfig({
   },
 });
 
-on ('task', tasks);
-on ('task',{
-  excelToJsonConverter(filePath){
-       const result = excelToJson({
-         sourceFile: fs.readFileSync(filePath),
-       });
-       return result;
-  }
-})
+
