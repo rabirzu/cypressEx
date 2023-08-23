@@ -27,11 +27,11 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        When I check if the "<checkcart>" selected are in Cart
+        When I check if the products selected are in Cart
             | checkcart               |
             | Sauce Labs Bolt T-Shirt |
          
@@ -46,12 +46,12 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             |products|
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        When I check if the "<checkcart>" selected are in Cart
+        When I check if the products selected are in Cart
             | checkcart               |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
@@ -65,7 +65,7 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
@@ -80,13 +80,13 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
         Then I remove the Products added before
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
@@ -101,17 +101,17 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
         Then I remove the Products added before
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        When I check if the "<checkcart>" selected are in Cart
+        When I check if the products selected are in Cart
             | checkcart               |
             | Sauce Labs Bolt T-Shirt |
 
@@ -126,12 +126,12 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more "<products>" to cart
+        When I add more products to cart
             | products                |
             | Sauce Labs Bike Light   |
             | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        When I check if the "<checkcart>" selected are in Cart
+        When I check if the products selected are in Cart
             | checkcart               |
             | Sauce Labs Bolt T-Shirt |
         Then I click on checkout button
