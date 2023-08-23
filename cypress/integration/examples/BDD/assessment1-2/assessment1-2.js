@@ -37,41 +37,34 @@ When("I am on Products page", () => {
   cy.url().should("be.equal", "https://www.saucedemo.com/inventory.html");
 });
 
-When("I add {string} to cart", (product) => {
- 
+When("I add products to cart", (product) => {
   cy.selectProduct(product);
   elementArray.push(product);
   cy.log(elementArray);
 });
 
-When("I add more {string} to cart", function(product,dataTable) {
-  cy.log(dataTable)
+When("I add more products to cart", function (dataTable) {
+  cy.log(dataTable);
 
   cy.selectProduct(dataTable.rawTable[1]);
   cy.selectProduct(dataTable.rawTable[2]);
-  cy.log(dataTable.rawTable[1])
-
+  cy.log(dataTable.rawTable[1]);
 });
 
 Then("I click on Cart button", () => {
   productPageSauce.getCartButton().click();
 });
 
-When("I check if the {string} selected are in Cart", function(product,dataTable) {
-cy.log(dataTable)  
-  
-  cy.get(".inventory_item_name").each(($el, index) => {
-  
-   $el.text().includes(
-    dataTable.rawTable[index])
-    
-  });
+When("I check if the products selected are in Cart", function (dataTable) {
+  cy.log(dataTable);
 
+  cy.get(".inventory_item_name").each(($el, index) => {
+    $el.text().includes(dataTable.rawTable[index]);
+  });
 });
 
 Then("I remove the Products added before", () => {
   cy.get(".inventory_item_description").each(($el, index, $list) => {
-   
     if ($el.text().includes("Remove")) {
       cy.get(".btn").eq(index).click();
     }
@@ -80,5 +73,3 @@ Then("I remove the Products added before", () => {
 Then("I click on checkout button", () => {
   checkOutPageSauce.getCheckOutButton().click();
 });
-
-
