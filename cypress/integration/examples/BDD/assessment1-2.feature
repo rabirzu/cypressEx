@@ -27,12 +27,17 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add one product to cart
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        Then I check if the Products selected are in Cart
+        When I check if the "<checkcart>" selected are in Cart
+            | checkcart               |
+            | Sauce Labs Bolt T-Shirt |
+         
 
 
-# Scenario 3 Adding multiple products to cart
+#Scenario 3 Adding multiple products to cart
 
     Scenario: Adding multiple products to cart
         Given I access the page
@@ -41,12 +46,18 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more Products to cart
+        When I add more "<products>" to cart
+            |products|
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        Then I check if the Products selected are in Cart
+        When I check if the "<checkcart>" selected are in Cart
+            | checkcart               |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
 
 
-# Scenario 4 Adding multiple products to cart and removing them
+# # Scenario 4 Adding multiple products to cart and removing them
     Scenario: Adding multiple products to cart and removing them
         Given I access the page
         When I enter login credentials
@@ -54,10 +65,13 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more Products to cart
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
         Then I remove the Products added before
 
-# Scenario 5 Adding multiple products to cart and removing them and then adding them back
+# # Scenario 5 Adding multiple products to cart and removing them and then adding them back
 
     Scenario: Adding multiple products to cart and removing them and then adding them back
         Given I access the page
@@ -66,12 +80,19 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more Products to cart
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
         Then I remove the Products added before
-        Then I add more Products to cart
+        When I am on Products page
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
 
 
-# Scenario 6 Adding multiple products to cart and removing them and then adding them back and then checking out
+# # Scenario 6 Adding multiple products to cart and removing them and then adding them back and then checking out
 
     Scenario: Adding multiple products to cart and removing them and then adding them back and then checking out
         Given I access the page
@@ -80,14 +101,23 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more Products to cart
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
         Then I remove the Products added before
-        Then I add more Products to cart
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        Then I check if the Products selected are in Cart
+        When I check if the "<checkcart>" selected are in Cart
+            | checkcart               |
+            | Sauce Labs Bolt T-Shirt |
+
         Then I click on checkout button
 
-# Scenario 7 Adding multiple products and then checking out the cart
+# # Scenario 7 Adding multiple products and then checking out the cart
 
     Scenario: Adding multiple products and then checking out the cart
         Given I access the page
@@ -96,7 +126,12 @@ Feature: End to End Ecommerce Validation
             | standard_user | secret_sauce |
         When I click on Login button
         When I am on Products page
-        When I add more Products to cart
+        When I add more "<products>" to cart
+            | products                |
+            | Sauce Labs Bike Light   |
+            | Sauce Labs Bolt T-Shirt |
         Then I click on Cart button
-        Then I check if the Products selected are in Cart
+        When I check if the "<checkcart>" selected are in Cart
+            | checkcart               |
+            | Sauce Labs Bolt T-Shirt |
         Then I click on checkout button

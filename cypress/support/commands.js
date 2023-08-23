@@ -20,7 +20,7 @@
 
 //Select product command
 Cypress.Commands.add("selectProduct", (productName) => {
-  cy.get(".inventory_item_description").each(($el, index, $list) => {
+  cy.get(".inventory_item_description").each(($el, index) => {
     if ($el.text().includes(productName)) {
       cy.get('.btn').eq(index).click();
     }
